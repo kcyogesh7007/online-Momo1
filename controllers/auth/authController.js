@@ -24,7 +24,7 @@ exports.registerUser = async (req, res) => {
     userPhoneNumber: phoneNumber,
   });
   res.status(201).json({
-    messag: "User registered successfully",
+    message: "User registered successfully",
   });
 };
 

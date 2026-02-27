@@ -8,11 +8,15 @@ connectDB();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+app.use(express.static("uploads"));
+
 const authRoute = require("./routes/authRoute");
 const productRoute = require("./routes/productRoute");
+const adminUserRoute = require("./routes/adminUserRoute");
 
 app.use("/api", authRoute);
 app.use("/api", productRoute);
+app.use("/api", adminUserRoute);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
